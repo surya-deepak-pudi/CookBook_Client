@@ -1,0 +1,5 @@
+@mixin make-3d {
+  -webkit-box-shadow: 0 0.3rem 0.5rem -0.3rem black;
+  -moz-box-shadow: 0 0.3rem 0.5rem -0.3rem black;
+  box-shadow: 0 0.3rem 0.5rem -0.3rem black;
+}

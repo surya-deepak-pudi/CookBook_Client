@@ -1,0 +1,74 @@
+@import "../sass/mixins";
+
+.landing {
+  &__brief {
+    &--right {
+      display: grid;
+      grid-template-columns: 62vw 35vw;
+      height: 100vh;
+    }
+    &--left {
+      display: grid;
+      grid-template-columns: 35vw 62vw;
+      height: 100vh;
+    }
+    &__image {
+      margin-top: 3rem;
+      height: 56rem;
+      width: 43rem;
+      @include make-3d;
+    }
+    &__navbar {
+      height: 2rem;
+      border-bottom: 0.1rem solid #24271d;
+      margin-right: 1.5rem;
+    }
+    &__description {
+      h1 {
+        margin-top: 1rem;
+        font-size: 10rem;
+        color: #0d0f0a;
+      }
+      h2 {
+        font-size: 6rem;
+      }
+    }
+    &__line {
+      &--up {
+        border-top: 0.1rem solid #24271d;
+        margin-right: 1.5rem;
+      }
+      &--down {
+        border-top: 0.1rem solid #24271d;
+        margin-right: 1.5rem;
+        margin-top: 3rem;
+      }
+    }
+    &__para {
+      font-size: 2rem;
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.button {
+  &__next {
+    flex-direction: row-reverse;
+    height: 2rem;
+    width: 12rem;
+    clip-path: polygon(100% 0, 0 0, 50% 100%);
+    padding: 0rem;
+    margin: 0rem;
+    background-color: #0d0f0a;
+    float: right;
+    margin-right: 1.5rem;
+  }
+  &__previous {
+    margin-top: 8rem;
+    height: 2rem;
+    width: 12rem;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color: #0d0f0a;
+  }
+}
