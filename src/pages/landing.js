@@ -1,12 +1,19 @@
 import { Fragment } from "react"
+//layouts
 import LandingLeftGrid from "../layouts/landingLeftImage"
 import LandingRightGrid from "../layouts/landingRightImage"
+//components
+import LinkButton from "../components/buttons/linkButtons"
+//assets
 import introImage from "../assets/intro_portrait.jpg"
 import recipeImage from "../assets/recipe_portrait.jpg"
 import pantryImage from "../assets/pantry_portrait.jpg"
 import cookingImage from "../assets/cooking_portrait.jpg"
-import Button from "../components/buttons"
+//styling
 import "./landing.scss"
+
+//descritpion components which displays data in layouts
+//a change can be made to read a text file
 
 const IntroDescription = () => {
   return (
@@ -23,8 +30,12 @@ const IntroDescription = () => {
         <br />
         Just leave it to us...
       </p>
-      <Button type="login">Login</Button>
-      <Button type="register">Regsiter</Button>
+      <LinkButton href="/login" purpose="login">
+        Login
+      </LinkButton>
+      <LinkButton href="/register" purpose="register">
+        Regsiter
+      </LinkButton>
     </Fragment>
   )
 }
@@ -99,6 +110,7 @@ const CookingDescription = () => {
   )
 }
 
+//page comonent to send data requires landing grids
 const LandingPage = () => {
   return (
     <div className="landing">

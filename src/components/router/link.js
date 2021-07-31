@@ -1,16 +1,14 @@
 import React from "react"
+import redirect from "./redirect"
 
-const Link = ({ href, children }) => {
+const Link = ({ href, children, style }) => {
   const handleChange = (e) => {
     e.preventDefault()
-    window.history.pushState({}, "", href)
-
-    const navEvent = new PopStateEvent("popstate")
-    window.dispatchEvent(navEvent)
+    redirect(href)
   }
 
   return (
-    <a href={href} className="link" onClick={handleChange}>
+    <a href={href} className={style} onClick={handleChange}>
       {children}
     </a>
   )

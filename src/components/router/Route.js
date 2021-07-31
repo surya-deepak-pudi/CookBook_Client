@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 
 const Route = ({ path, children }) => {
   const [currentPath, setCurrentPath] = useState(window.location.pathname)
@@ -11,6 +11,9 @@ const Route = ({ path, children }) => {
       window.removeEventListener("popstate", onLocationChange)
     }
   }, [])
+  if (path === currentPath) {
+    console.log({ currentPath, path })
+  }
   return currentPath === path ? children : null
 }
 

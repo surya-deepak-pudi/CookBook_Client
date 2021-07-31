@@ -1,0 +1,21 @@
+.textInput {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 30vw;
+  height: 3rem;
+  border-inline: none;
+  border-top: none;
+  border-bottom: 0.2rem solid black;
+  font-size: 2rem;
+  &:focus {
+    outline: none;
+    border-bottom: 0.2rem solid green;
+  }
+  &:required {
+    border-bottom: 0.2rem solid red;
+  }
+}
+
+.label {
+  font-size: 1.5rem;
+}

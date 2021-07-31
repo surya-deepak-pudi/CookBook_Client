@@ -1,19 +1,19 @@
-@import "../sass/mixins";
+@import "../../sass/mixins";
+@import "../../sass/variables";
 
 .button {
   &__login {
     margin: 0.5rem;
     border: none;
-    background-color: #4c4935;
+    background-color: $primaryolive;
     font-size: 2rem;
-    color: white;
     padding: 0.5rem;
     height: 4rem;
     width: 7rem;
     border-radius: 0.5rem;
     @include make-3d;
     &:hover {
-      background-color: darken($color: #4c4935, $amount: 3%);
+      background-color: darken($color: $primaryolive, $amount: 3%);
     }
     &:focus {
       outline: 0;
@@ -22,7 +22,7 @@
   &__register {
     margin: 0.5rem;
     border: none;
-    background-color: #24271d;
+    background-color: $primarybrown;
     font-size: 2rem;
     color: white;
     height: 4rem;
@@ -30,7 +30,7 @@
     border-radius: 0.5rem;
     @include make-3d;
     &:hover {
-      background-color: darken($color: #24271d, $amount: 3%);
+      background-color: darken($color: $primarybrown, $amount: 3%);
     }
     &:focus {
       outline: 0;
@@ -41,13 +41,13 @@
     border: none;
     background-color: #bfbdb2;
     font-size: 2rem;
-    color: #0d0f0a;
+    color: $primaryblack;
     height: 4rem;
     padding: 0.5rem;
     border-radius: 0.5rem;
     @include make-3d;
     &:hover {
-      background-color: darken($color: #24271d, $amount: 3%);
+      background-color: darken($color: $primarybrown, $amount: 3%);
     }
     &:focus {
       outline: 0;
