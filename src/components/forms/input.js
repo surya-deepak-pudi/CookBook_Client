@@ -5,15 +5,46 @@ import { formEntryAction } from "../../actions/formActions"
 
 import "./input.scss"
 
-const Input = ({ name, type }) => {
+const Input = ({
+  name,
+  type,
+  size,
+  lvisible,
+  label,
+  placeholder,
+  style,
+  ...rest
+}) => {
+  if (!label) {
+    label = name
+  }
+  if (!placeholder) {
+    placeholder = name
+  }
   const [formName, setFormName] = useState(null)
   const formRef = useRef(null)
   const dispatch = useDispatch()
+  let sizeStyle, errStyle
+
+  switch (size) {
+    case "small":
+      sizeStyle = "textInput__" + size
+      break
+    case "large":
+      sizeStyle = "textInput__" + size
+      break
+    default:
+      sizeStyle = "textInput__default"
+      break
+  }
 
   useEffect(() => {
     setFormName(formRef.current.parentNode.name)
-    console.log(formRef)
   }, [])
+
+  const err = useSelector((state) => {
+    return state.error[formName] || {}
+  })
 
   let setValue = useSelector(
     (state) => state.forms[formName] && state.forms[formName][name]
@@ -24,17 +55,26 @@ const Input = ({ name, type }) => {
     const values = { name, value: e.target.value, formName }
     formEntryAction(values, dispatch)
   }
+
+  errStyle = err[name] ? { borderColor: "red" } : {}
+
   return (
     <Fragment>
-      {setValue && <label className="label">{name + ":"}</label>}
-      <br />
+      {(setValue || lvisible === "y") && (
+        <Fragment>
+          <label className="label">{label + ":"}</label>
+        </Fragment>
+      )}
+
       <input
-        className="textInput"
+        className={"textInput" + " " + sizeStyle}
+        style={{ ...style, ...errStyle }}
+        {...rest}
         name={name}
         ref={formRef}
         value={setValue}
         onChange={handleChange}
-        placeholder={name}
+        placeholder={placeholder}
         type={type}
       ></input>
     </Fragment>

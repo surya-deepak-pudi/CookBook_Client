@@ -7,6 +7,8 @@ import LandingRightImage from "../layouts/landingRightImage"
 
 import { loginAction } from "../actions/authActions"
 
+import { emailValidated } from "../validation"
+
 import LoginImage from "../assets/login_portrait.jpg"
 
 /*
@@ -19,10 +21,14 @@ const LoginDescription = () => {
   return (
     <div style={{ marginInline: "20rem" }}>
       <h2>Login</h2>
-      <Form formName="Login" action={loginAction}>
-        <Input name="Email" type="text"></Input>
+      <Form
+        formName="Login"
+        action={loginAction}
+        validation={{ Email: [emailValidated] }}
+      >
+        <Input name="Email" type="text" required></Input>
         <br></br>
-        <Input name="Password" type="password"></Input>
+        <Input name="Password" type="password" required></Input>
         <br></br>
         <br></br>
         <Button type="submit">Submit</Button>

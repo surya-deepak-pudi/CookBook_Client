@@ -1,7 +1,6 @@
 .textInput {
   margin-top: 2rem;
   margin-bottom: 2rem;
-  width: 30vw;
   height: 3rem;
   border-inline: none;
   border-top: none;
@@ -9,13 +8,28 @@
   font-size: 2rem;
   &:focus {
     outline: none;
-    border-bottom: 0.2rem solid green;
+    border-bottom: 0.2rem solid black;
   }
-  &:required {
-    border-bottom: 0.2rem solid red;
+  // &:user-invalid {
+  //   border-bottom: 0.2rem solid red;
+  // }
+  &__small {
+    width: 15vw;
+  }
+  &__large {
+    width: 45vw;
+  }
+  &__default {
+    width: 30vw;
+  }
+  &--error {
+    margin-top: 1rem;
+    font-size: 2rem;
+    color: red;
   }
 }
 
 .label {
   font-size: 1.5rem;
+  margin-right: 1rem;
 }
