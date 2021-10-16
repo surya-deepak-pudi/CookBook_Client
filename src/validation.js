@@ -55,14 +55,11 @@ export const passwordValidated = (pwd, form, input) => {
 }
 
 export const emailValidated = (email, form, input) => {
-  console.log(form)
   const re =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   if (re.test(email[0])) {
-    console.log("its passed")
     return true
   } else {
-    console.log("not passed")
     return {
       type: ERR_MAIL_INVALID,
       payload: { message: "Please enter a valid email", form, input },

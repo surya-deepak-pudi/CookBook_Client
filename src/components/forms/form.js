@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
+import { formClearAction } from "../../actions/formActions"
 import "./input.scss"
 
 /*for validation provide  validation={{"inputNames":[list of all the validation methods]}}*/
@@ -32,6 +33,7 @@ const Form = ({ action, formName, children, validation }) => {
     })
     if (isValidated) {
       action(data, dispatch)
+      formClearAction(formName, dispatch)
     }
   }
 

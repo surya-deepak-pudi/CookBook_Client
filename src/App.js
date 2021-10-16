@@ -1,6 +1,7 @@
 import "./App.scss"
 
 import Route from "./components/router/Route"
+import PrivateRoute from "./components/router/privateRoute"
 
 import Landing from "./pages/landing"
 import Login from "./pages/login"
@@ -29,9 +30,9 @@ function App() {
         <Route path="/register">
           <Register></Register>
         </Route>
-        <Route path="/pantry">
+        <PrivateRoute path="/pantry">
           <Pantry></Pantry>
-        </Route>
+        </PrivateRoute>
         <Route path="/recipes">
           <RecipeList></RecipeList>
         </Route>

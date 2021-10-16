@@ -13,6 +13,7 @@ import {
 import { registerAction } from "../actions/authActions"
 
 import RegisterImage from "../assets/register_portrait.jpg"
+import React from "react"
 
 /*
 form name: Register
@@ -45,10 +46,10 @@ const RegisterDescription = () => {
           name="LastName"
           type="text"
           size="small"
-          required
+          required="true"
           lvisible="y"
         ></Input>
-
+        <br></br>
         <br></br>
         <Input name="Email" type="text" lvisible="y" required></Input>
         <br></br>
